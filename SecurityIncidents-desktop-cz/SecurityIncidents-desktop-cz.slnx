@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="IncidentForms/IncidentForms.csproj" />
+  <Project Path="SecurityIncidents-desktop-cz/SecurityIncidents-desktop-cz.csproj" />
+</Solution>
