@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             menuStrip1 = new MenuStrip();
-            statusStrip1 = new StatusStrip();
             mnuFile = new ToolStripMenuItem();
             mnuForm = new ToolStripMenuItem();
             mnuEventForm = new ToolStripMenuItem();
+            statusStrip1 = new StatusStrip();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -44,14 +44,6 @@
             menuStrip1.Size = new Size(800, 24);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
-            // 
-            // statusStrip1
-            // 
-            statusStrip1.Location = new Point(0, 428);
-            statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(800, 22);
-            statusStrip1.TabIndex = 2;
-            statusStrip1.Text = "statusStrip1";
             // 
             // mnuFile
             // 
@@ -71,6 +63,15 @@
             mnuEventForm.Name = "mnuEventForm";
             mnuEventForm.Size = new Size(180, 22);
             mnuEventForm.Text = "Zpráva o &události";
+            mnuEventForm.Click += mnuEventForm_Click;
+            // 
+            // statusStrip1
+            // 
+            statusStrip1.Location = new Point(0, 428);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(800, 22);
+            statusStrip1.TabIndex = 2;
+            statusStrip1.Text = "statusStrip1";
             // 
             // SecurityIncidents
             // 
