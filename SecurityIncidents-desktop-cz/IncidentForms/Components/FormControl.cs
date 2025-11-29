@@ -11,7 +11,7 @@ namespace IncidentForms.Components
         [Browsable(false)]        
         
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public virtual object? FormData { get; set; }
+        public virtual IReport? FormData { get; set; }
 
         [Browsable(false)]
 

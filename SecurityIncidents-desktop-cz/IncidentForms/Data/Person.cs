@@ -42,7 +42,16 @@ namespace IncidentForms.Data
         }
         public string GetMarkDown()
         {
-            return "";
+            StringBuilder md = new StringBuilder();
+            md.AppendLine($"|||");
+            md.AppendLine($"|-|-|");
+            md.AppendLine($"|**Jméno:**| {Name} |");
+            md.AppendLine($"|**Adresa:**| {Address} |");
+            md.AppendLine($"|**Organizace:**| {Organization} |");
+            md.AppendLine($"|**Oddělení:**| {OrgUnit} |");
+            md.AppendLine($"|**Email:**| {Email} |");
+            md.AppendLine($"|**Telefon:**| {Phone} |");
+            return md.ToString();
         }
     }
 

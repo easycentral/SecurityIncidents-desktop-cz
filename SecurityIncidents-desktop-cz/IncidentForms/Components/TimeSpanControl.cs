@@ -47,12 +47,13 @@ namespace IncidentForms.Components
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public TimeSpan Duration
         {
-            get => TimeSpan.FromMinutes((double)numDays.Value * 1440 + (double)numHours.Value * 60 + (double)numMinutes.Value);
+            //get => TimeSpan.FromMinutes((double)numDays.Value * 1440 + (double)numHours.Value * 60 + (double)numMinutes.Value);
+            get => new TimeSpan((int)numDays.Value, (int)numHours.Value, (int)numMinutes.Value, 0);
             set
             {
-                numDays.Value = (decimal)value.TotalDays;
-                numHours.Value = (decimal)(value.TotalHours % 24);
-                numMinutes.Value = (decimal)(value.TotalMinutes % 60);
+                numDays.Value = (decimal)value.Days;
+                numHours.Value = (decimal)(value.Hours);
+                numMinutes.Value = (decimal)(value.Minutes);
             }
         }
 

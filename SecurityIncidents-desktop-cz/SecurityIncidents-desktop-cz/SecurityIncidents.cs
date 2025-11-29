@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Text.Json;
 using System.Windows.Forms;
 
 namespace SecurityIncidents_desktop_cz
@@ -51,8 +52,12 @@ namespace SecurityIncidents_desktop_cz
                         FileType = frmdata.FormType,
                         FileData = frmdata.FormData
                     };
-                    string json = System.Text.Json.JsonSerializer.Serialize(dataFile);
-                    System.IO.File.WriteAllText(dialog.FileName, json);
+                    var options = new JsonSerializerOptions
+                    {
+                        WriteIndented = true // pěkné odsazení
+                    };
+                    string json = JsonSerializer.Serialize(dataFile);
+                    File.WriteAllText(dialog.FileName, json);
                     activeForm.FilePath = dialog.FileName;
                     activeForm.FileName = System.IO.Path.GetFileName(dialog.FileName);
                     activeForm.Text = $"{frmdata.FormTitle} - {activeForm.FileName}";
@@ -75,7 +80,11 @@ namespace SecurityIncidents_desktop_cz
                         FileType = frmdata.FormType,
                         FileData = frmdata.FormData
                     };
-                    string json = System.Text.Json.JsonSerializer.Serialize(dataFile);
+                    var options = new JsonSerializerOptions
+                    {
+                        WriteIndented = true // pěkné odsazení
+                    };
+                    string json = JsonSerializer.Serialize(dataFile);
                     System.IO.File.WriteAllText(activeForm.FilePath, json);
                 }
                 else
@@ -94,8 +103,11 @@ namespace SecurityIncidents_desktop_cz
             };
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                string json = System.IO.File.ReadAllText(dialog.FileName);
-                DataFile? dataFile = System.Text.Json.JsonSerializer.Deserialize<DataFile>(json);
+                string json = File.ReadAllText(dialog.FileName);
+                DataFile? dataFile = JsonSerializer.Deserialize<DataFile>(json);
+
+                
+
                 if (dataFile != null)
                 {
                     FormWindow frm = new FormWindow { MdiParent = this };
@@ -104,15 +116,15 @@ namespace SecurityIncidents_desktop_cz
                     {
                         case "InfSecurityEvent":
                             formControl = new InfSecEvent();
-                            InfSecurityEvent data= System.Text.Json.JsonSerializer.Deserialize<InfSecurityEvent>(dataFile.FileData.ToString());
+                            InfSecurityEvent data = JsonSerializer.Deserialize<InfSecurityEvent>(dataFile.FileData.ToString());
                             formControl.FormData = data;
                             break;
-                        
+
 
                     }
                     if (formControl != null)
                     {
-                        
+
                         frm.SetForm(formControl);
                         frm.FilePath = dialog.FileName;
                         frm.FileName = System.IO.Path.GetFileName(dialog.FileName);
@@ -120,6 +132,30 @@ namespace SecurityIncidents_desktop_cz
                         frm.Show();
                     }
                 }
+            }
+
+        }
+
+        private void mnuFileExportMarkdown_Click(object sender, EventArgs e)
+        {
+            using var dialog = new SaveFileDialog
+            {
+                Filter = "MarkDown soubory (*.md)|*.md",
+                Title = "Exportovat formulář"
+            };
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                var activeForm = this.ActiveMdiChild as FormWindow;
+                if (activeForm != null)
+                {
+                    var frmdata = activeForm.Controls[0].Controls[0] as FormControl;
+                    string md = frmdata.FormData.GetMarkDown();
+                    System.IO.File.WriteAllText(dialog.FileName, md);
+                    
+                }
+
+
             }
 
         }

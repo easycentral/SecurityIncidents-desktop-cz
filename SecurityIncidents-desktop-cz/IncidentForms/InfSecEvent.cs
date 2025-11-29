@@ -40,7 +40,7 @@ namespace IncidentForms
         [Category("FormData")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
 
-        public override object? FormData
+        public override IReport? FormData
         {
             get
             {
