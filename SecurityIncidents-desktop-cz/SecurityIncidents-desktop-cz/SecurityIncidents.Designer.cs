@@ -30,58 +30,71 @@
         {
             mnuMain = new MenuStrip();
             mnuFile = new ToolStripMenuItem();
-            mnuForm = new ToolStripMenuItem();
-            mnuEventForm = new ToolStripMenuItem();
-            statusStrip1 = new StatusStrip();
+            mnuFileNew = new ToolStripMenuItem();
+            mnuFileNewEvent = new ToolStripMenuItem();
+            mnuFileOpen = new ToolStripMenuItem();
+            mnuFileSave = new ToolStripMenuItem();
+            mnuFileSaveAs = new ToolStripMenuItem();
             mnuMain.SuspendLayout();
             SuspendLayout();
             // 
             // mnuMain
             // 
             mnuMain.Font = new Font("Consolas", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            mnuMain.Items.AddRange(new ToolStripItem[] { mnuFile, mnuForm });
+            mnuMain.Items.AddRange(new ToolStripItem[] { mnuFile });
             mnuMain.Location = new Point(0, 0);
             mnuMain.Name = "mnuMain";
-            mnuMain.Padding = new Padding(7, 2, 0, 2);
             mnuMain.Size = new Size(914, 26);
             mnuMain.TabIndex = 1;
             mnuMain.Text = "menuStrip1";
             // 
             // mnuFile
             // 
+            mnuFile.DropDownItems.AddRange(new ToolStripItem[] { mnuFileNew, mnuFileOpen, mnuFileSave, mnuFileSaveAs });
             mnuFile.Name = "mnuFile";
             mnuFile.Size = new Size(68, 22);
             mnuFile.Text = "&Soubor";
             // 
-            // mnuForm
+            // mnuFileNew
             // 
-            mnuForm.DropDownItems.AddRange(new ToolStripItem[] { mnuEventForm });
-            mnuForm.Name = "mnuForm";
-            mnuForm.Size = new Size(84, 22);
-            mnuForm.Text = "&Formulář";
+            mnuFileNew.DropDownItems.AddRange(new ToolStripItem[] { mnuFileNewEvent });
+            mnuFileNew.Name = "mnuFileNew";
+            mnuFileNew.Size = new Size(196, 22);
+            mnuFileNew.Text = "&Nový";
             // 
-            // mnuEventForm
+            // mnuFileNewEvent
             // 
-            mnuEventForm.Name = "mnuEventForm";
-            mnuEventForm.Size = new Size(212, 22);
-            mnuEventForm.Text = "Zpráva o &události";
-            mnuEventForm.Click += mnuEventForm_Click;
+            mnuFileNewEvent.Name = "mnuFileNewEvent";
+            mnuFileNewEvent.Size = new Size(132, 22);
+            mnuFileNewEvent.Text = "Událost";
+            mnuFileNewEvent.Click += mnuFileNewEvent_Click;
             // 
-            // statusStrip1
+            // mnuFileOpen
             // 
-            statusStrip1.Location = new Point(0, 518);
-            statusStrip1.Name = "statusStrip1";
-            statusStrip1.Padding = new Padding(1, 0, 16, 0);
-            statusStrip1.Size = new Size(914, 22);
-            statusStrip1.TabIndex = 2;
-            statusStrip1.Text = "statusStrip1";
+            mnuFileOpen.Name = "mnuFileOpen";
+            mnuFileOpen.Size = new Size(196, 22);
+            mnuFileOpen.Text = "Otevřít ...";
+            mnuFileOpen.Click += mnuFileOpen_Click;
+            // 
+            // mnuFileSave
+            // 
+            mnuFileSave.Name = "mnuFileSave";
+            mnuFileSave.Size = new Size(196, 22);
+            mnuFileSave.Text = "Uložit";
+            mnuFileSave.Click += mnuFileSave_Click;
+            // 
+            // mnuFileSaveAs
+            // 
+            mnuFileSaveAs.Name = "mnuFileSaveAs";
+            mnuFileSaveAs.Size = new Size(196, 22);
+            mnuFileSaveAs.Text = "Uložit jako ...";
+            mnuFileSaveAs.Click += mnuFileSaveAs_Click;
             // 
             // SecurityIncidents
             // 
             AutoScaleDimensions = new SizeF(8F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 540);
-            Controls.Add(statusStrip1);
             Controls.Add(mnuMain);
             Font = new Font("Consolas", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
             IsMdiContainer = true;
@@ -96,11 +109,13 @@
         }
 
         #endregion
-
+        private StatusStrip statusStrip1;
         private MenuStrip mnuMain;
         private ToolStripMenuItem mnuFile;
-        private ToolStripMenuItem mnuForm;
-        private ToolStripMenuItem mnuEventForm;
-        private StatusStrip statusStrip1;
+        private ToolStripMenuItem mnuFileNew;
+        private ToolStripMenuItem mnuFileOpen;
+        private ToolStripMenuItem mnuFileNewEvent;
+        private ToolStripMenuItem mnuFileSave;
+        private ToolStripMenuItem mnuFileSaveAs;
     }
 }

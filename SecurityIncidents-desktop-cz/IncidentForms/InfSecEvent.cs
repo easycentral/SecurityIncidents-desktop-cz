@@ -10,12 +10,37 @@ using IncidentForms.Data;
 
 namespace IncidentForms
 {
-    public partial class InfSecEvent : UserControl
+    
+    public partial class InfSecEvent : FormControl
     {
-        [Browsable(true)]
+
+        [Browsable(false)]
         [Category("FormData")]
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
-        public InfSecurityEvent InfSecurityEventData
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public override string FormType
+        {
+            get
+            {
+                return "InfSecurityEvent";
+            }
+        }
+
+        [Browsable(false)]
+        [Category("FormData")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public override string FormTitle
+        {
+            get
+            {
+                return "Zpráva o události informační bezpečnosti";
+            }
+        }
+
+        [Browsable(false)]
+        [Category("FormData")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+
+        public override object? FormData
         {
             get
             {
@@ -35,17 +60,20 @@ namespace IncidentForms
             }
             set
             {
-                dateEventDate.Value = value.EventDate;
-                txtEventID.Text = value.EventID;
-                lstRelated.Items = value.RelatedIDs;
-                lstAttachment.Items = value.Attachments;
-                persNotifier.PersonData = value.Notifier;
-                txtDescription.Text = value.Description;
-                dtEventStartDateTime.Value = value.EventStartDateTime;
-                dtEventDetectionDateTime.Value = value.EventDetectionDateTime;
-                dtEventReportDateTime.Value = value.EventReportDateTime;
-                chkClosed.Checked = value.ReportClosed;
-                tsDuration.Duration = value.EventDuration;
+                if (value == null || value.GetType() != typeof(InfSecurityEvent))
+                    return;
+                InfSecurityEvent data = (InfSecurityEvent) value;
+                dateEventDate.Value = data.EventDate;
+                txtEventID.Text = data.EventID;
+                lstRelated.Items = data.RelatedIDs;
+                lstAttachment.Items = data.Attachments;
+                persNotifier.PersonData = data.Notifier;
+                txtDescription.Text = data.Description;
+                dtEventStartDateTime.Value = data.EventStartDateTime;
+                dtEventDetectionDateTime.Value = data.EventDetectionDateTime;
+                dtEventReportDateTime.Value = data.EventReportDateTime;
+                chkClosed.Checked = data.ReportClosed;
+                tsDuration.Duration = data.EventDuration;
                 
             }
         }

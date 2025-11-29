@@ -10,7 +10,15 @@ namespace SecurityIncidents_desktop_cz
 {
     public partial class FormWindow : Form
     {
-        
+        [Browsable(true)]
+        [Category("FormData")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public string FileName { get; set; } = "bez názvu";
+        [Browsable(true)]
+        [Category("FormData")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public string FilePath { get; set; } = string.Empty;
+
         public FormWindow()
         {
             InitializeComponent();
