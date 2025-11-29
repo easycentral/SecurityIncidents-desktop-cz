@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             ComponentName = new GroupBox();
-            textBox1 = new TextBox();
+            txtPhone = new TextBox();
             lblPhone = new Label();
             txtEmail = new TextBox();
             lblEmail = new Label();
@@ -47,7 +47,7 @@
             // ComponentName
             // 
             ComponentName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            ComponentName.Controls.Add(textBox1);
+            ComponentName.Controls.Add(txtPhone);
             ComponentName.Controls.Add(lblPhone);
             ComponentName.Controls.Add(txtEmail);
             ComponentName.Controls.Add(lblEmail);
@@ -59,122 +59,138 @@
             ComponentName.Controls.Add(lblAddress);
             ComponentName.Controls.Add(txtName);
             ComponentName.Controls.Add(lblName);
-            ComponentName.Location = new Point(3, 6);
+            ComponentName.Location = new Point(3, 7);
+            ComponentName.Margin = new Padding(3, 4, 3, 4);
             ComponentName.Name = "ComponentName";
-            ComponentName.Size = new Size(415, 344);
+            ComponentName.Padding = new Padding(3, 4, 3, 4);
+            ComponentName.Size = new Size(701, 253);
             ComponentName.TabIndex = 13;
             ComponentName.TabStop = false;
             ComponentName.Text = "Person";
             // 
-            // textBox1
+            // txtPhone
             // 
-            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox1.Location = new Point(14, 296);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(387, 23);
-            textBox1.TabIndex = 24;
+            txtPhone.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtPhone.Location = new Point(200, 211);
+            txtPhone.Margin = new Padding(3, 4, 3, 4);
+            txtPhone.Name = "txtPhone";
+            txtPhone.Size = new Size(494, 25);
+            txtPhone.TabIndex = 24;
             // 
             // lblPhone
             // 
             lblPhone.AutoSize = true;
-            lblPhone.Location = new Point(14, 278);
+            lblPhone.Location = new Point(16, 215);
             lblPhone.Name = "lblPhone";
-            lblPhone.Size = new Size(41, 15);
+            lblPhone.Size = new Size(48, 18);
             lblPhone.TabIndex = 23;
             lblPhone.Text = "Phone";
+            lblPhone.TextAlign = ContentAlignment.TopRight;
             // 
             // txtEmail
             // 
             txtEmail.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtEmail.Location = new Point(14, 247);
+            txtEmail.Location = new Point(200, 176);
+            txtEmail.Margin = new Padding(3, 4, 3, 4);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(387, 23);
+            txtEmail.Size = new Size(494, 25);
             txtEmail.TabIndex = 22;
             // 
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(14, 229);
+            lblEmail.Location = new Point(16, 180);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(41, 15);
+            lblEmail.Size = new Size(56, 18);
             lblEmail.TabIndex = 21;
             lblEmail.Text = "E-mail";
+            lblEmail.TextAlign = ContentAlignment.TopRight;
             // 
             // txtOrgUnit
             // 
             txtOrgUnit.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtOrgUnit.Location = new Point(14, 197);
+            txtOrgUnit.Location = new Point(200, 142);
+            txtOrgUnit.Margin = new Padding(3, 4, 3, 4);
             txtOrgUnit.Name = "txtOrgUnit";
-            txtOrgUnit.Size = new Size(387, 23);
+            txtOrgUnit.Size = new Size(494, 25);
             txtOrgUnit.TabIndex = 20;
             // 
             // lblOrgUnit
             // 
             lblOrgUnit.AutoSize = true;
-            lblOrgUnit.Location = new Point(14, 179);
+            lblOrgUnit.Location = new Point(16, 145);
             lblOrgUnit.Name = "lblOrgUnit";
-            lblOrgUnit.Size = new Size(109, 15);
+            lblOrgUnit.Size = new Size(160, 18);
             lblOrgUnit.TabIndex = 19;
             lblOrgUnit.Text = "Organizational Unit";
+            lblOrgUnit.TextAlign = ContentAlignment.TopRight;
             // 
             // txtOrganization
             // 
             txtOrganization.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtOrganization.Location = new Point(14, 146);
+            txtOrganization.Location = new Point(200, 103);
+            txtOrganization.Margin = new Padding(3, 4, 3, 4);
             txtOrganization.Name = "txtOrganization";
-            txtOrganization.Size = new Size(387, 23);
+            txtOrganization.Size = new Size(494, 25);
             txtOrganization.TabIndex = 18;
             // 
             // lblOrganization
             // 
             lblOrganization.AutoSize = true;
-            lblOrganization.Location = new Point(14, 128);
+            lblOrganization.Location = new Point(16, 107);
             lblOrganization.Name = "lblOrganization";
-            lblOrganization.Size = new Size(75, 15);
+            lblOrganization.Size = new Size(104, 18);
             lblOrganization.TabIndex = 17;
             lblOrganization.Text = "Organization";
+            lblOrganization.TextAlign = ContentAlignment.TopRight;
             // 
             // txtAddress
             // 
             txtAddress.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtAddress.Location = new Point(14, 94);
+            txtAddress.Location = new Point(200, 68);
+            txtAddress.Margin = new Padding(3, 4, 3, 4);
             txtAddress.Name = "txtAddress";
-            txtAddress.Size = new Size(387, 23);
+            txtAddress.Size = new Size(494, 25);
             txtAddress.TabIndex = 16;
             // 
             // lblAddress
             // 
             lblAddress.AutoSize = true;
-            lblAddress.Location = new Point(14, 76);
+            lblAddress.Location = new Point(16, 72);
             lblAddress.Name = "lblAddress";
-            lblAddress.Size = new Size(49, 15);
+            lblAddress.Size = new Size(64, 18);
             lblAddress.TabIndex = 15;
             lblAddress.Text = "Address";
+            lblAddress.TextAlign = ContentAlignment.TopRight;
             // 
             // txtName
             // 
             txtName.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtName.Location = new Point(14, 46);
+            txtName.Location = new Point(200, 34);
+            txtName.Margin = new Padding(3, 4, 3, 4);
             txtName.Name = "txtName";
-            txtName.Size = new Size(387, 23);
+            txtName.Size = new Size(494, 25);
             txtName.TabIndex = 14;
             // 
             // lblName
             // 
             lblName.AutoSize = true;
-            lblName.Location = new Point(14, 28);
+            lblName.Location = new Point(16, 37);
             lblName.Name = "lblName";
-            lblName.Size = new Size(39, 15);
+            lblName.Size = new Size(40, 18);
             lblName.TabIndex = 13;
             lblName.Text = "Name";
+            lblName.TextAlign = ContentAlignment.TopRight;
             // 
             // PersonControl
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(ComponentName);
+            Font = new Font("Consolas", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "PersonControl";
-            Size = new Size(421, 353);
+            Size = new Size(708, 264);
             ComponentName.ResumeLayout(false);
             ComponentName.PerformLayout();
             ResumeLayout(false);
@@ -183,7 +199,7 @@
         #endregion
 
         private GroupBox ComponentName;
-        private TextBox textBox1;
+        private TextBox txtPhone;
         private Label lblPhone;
         private TextBox txtEmail;
         private Label lblEmail;

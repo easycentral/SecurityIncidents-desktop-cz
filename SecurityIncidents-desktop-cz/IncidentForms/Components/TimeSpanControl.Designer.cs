@@ -42,54 +42,57 @@
             // lblDays
             // 
             lblDays.AutoSize = true;
-            lblDays.Location = new Point(0, 4);
+            lblDays.Location = new Point(0, 5);
             lblDays.Name = "lblDays";
-            lblDays.Size = new Size(32, 15);
+            lblDays.Size = new Size(40, 18);
             lblDays.TabIndex = 0;
             lblDays.Text = "Days";
             // 
             // lblHours
             // 
             lblHours.AutoSize = true;
-            lblHours.Location = new Point(57, 4);
+            lblHours.Location = new Point(65, 5);
             lblHours.Name = "lblHours";
-            lblHours.Size = new Size(39, 15);
+            lblHours.Size = new Size(48, 18);
             lblHours.TabIndex = 0;
             lblHours.Text = "Hours";
             // 
             // lblMinutes
             // 
             lblMinutes.AutoSize = true;
-            lblMinutes.Location = new Point(114, 4);
+            lblMinutes.Location = new Point(130, 5);
             lblMinutes.Name = "lblMinutes";
-            lblMinutes.Size = new Size(50, 15);
+            lblMinutes.Size = new Size(64, 18);
             lblMinutes.TabIndex = 0;
             lblMinutes.Text = "Minutes";
             // 
             // numDays
             // 
-            numDays.Location = new Point(0, 26);
+            numDays.Location = new Point(0, 31);
+            numDays.Margin = new Padding(3, 4, 3, 4);
             numDays.Name = "numDays";
-            numDays.Size = new Size(51, 23);
+            numDays.Size = new Size(58, 25);
             numDays.TabIndex = 1;
             // 
             // numHours
             // 
-            numHours.Location = new Point(57, 26);
+            numHours.Location = new Point(65, 31);
+            numHours.Margin = new Padding(3, 4, 3, 4);
             numHours.Name = "numHours";
-            numHours.Size = new Size(51, 23);
+            numHours.Size = new Size(58, 25);
             numHours.TabIndex = 1;
             // 
             // numMinutes
             // 
-            numMinutes.Location = new Point(114, 26);
+            numMinutes.Location = new Point(130, 31);
+            numMinutes.Margin = new Padding(3, 4, 3, 4);
             numMinutes.Name = "numMinutes";
-            numMinutes.Size = new Size(51, 23);
+            numMinutes.Size = new Size(58, 25);
             numMinutes.TabIndex = 1;
             // 
             // TimeSpanControl
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(numMinutes);
             Controls.Add(numHours);
@@ -97,8 +100,10 @@
             Controls.Add(lblMinutes);
             Controls.Add(lblHours);
             Controls.Add(lblDays);
+            Font = new Font("Consolas", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "TimeSpanControl";
-            Size = new Size(167, 57);
+            Size = new Size(191, 68);
             ((System.ComponentModel.ISupportInitialize)numDays).EndInit();
             ((System.ComponentModel.ISupportInitialize)numHours).EndInit();
             ((System.ComponentModel.ISupportInitialize)numMinutes).EndInit();

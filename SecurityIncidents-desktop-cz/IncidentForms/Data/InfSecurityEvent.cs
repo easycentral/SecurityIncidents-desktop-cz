@@ -9,6 +9,7 @@ namespace IncidentForms.Data
         public DateTime EventDate { get; set;  }= DateTime.Now.Date;
         public string EventID { get; set; } = "";
         public List<string> RelatedIDs { get; set; }= new List<string>();
+        public List<string> Attachments { get; set; } = new List<string>();
         public Person Notifier { get; set; }=new Person();
         public string Description { get; set; } = "";
         public DateTime EventStartDateTime { get; set; } = DateTime.Now;
@@ -16,7 +17,7 @@ namespace IncidentForms.Data
         public DateTime EventReportDateTime { get; set; } = DateTime.Now;
         public bool ReportClosed { get; set; }=false;
         public TimeSpan EventDuration { get; set; } = new TimeSpan();
-        public string Comments { get; set; } = "";
+        
 
         public string GetJSON()
         {

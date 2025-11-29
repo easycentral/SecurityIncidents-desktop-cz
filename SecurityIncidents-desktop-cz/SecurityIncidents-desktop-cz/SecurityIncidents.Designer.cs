@@ -28,71 +28,76 @@
         /// </summary>
         private void InitializeComponent()
         {
-            menuStrip1 = new MenuStrip();
+            mnuMain = new MenuStrip();
             mnuFile = new ToolStripMenuItem();
             mnuForm = new ToolStripMenuItem();
             mnuEventForm = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
-            menuStrip1.SuspendLayout();
+            mnuMain.SuspendLayout();
             SuspendLayout();
             // 
-            // menuStrip1
+            // mnuMain
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { mnuFile, mnuForm });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 24);
-            menuStrip1.TabIndex = 1;
-            menuStrip1.Text = "menuStrip1";
+            mnuMain.Font = new Font("Consolas", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            mnuMain.Items.AddRange(new ToolStripItem[] { mnuFile, mnuForm });
+            mnuMain.Location = new Point(0, 0);
+            mnuMain.Name = "mnuMain";
+            mnuMain.Padding = new Padding(7, 2, 0, 2);
+            mnuMain.Size = new Size(914, 26);
+            mnuMain.TabIndex = 1;
+            mnuMain.Text = "menuStrip1";
             // 
             // mnuFile
             // 
             mnuFile.Name = "mnuFile";
-            mnuFile.Size = new Size(57, 20);
+            mnuFile.Size = new Size(68, 22);
             mnuFile.Text = "&Soubor";
             // 
             // mnuForm
             // 
             mnuForm.DropDownItems.AddRange(new ToolStripItem[] { mnuEventForm });
             mnuForm.Name = "mnuForm";
-            mnuForm.Size = new Size(67, 20);
+            mnuForm.Size = new Size(84, 22);
             mnuForm.Text = "&Formulář";
             // 
             // mnuEventForm
             // 
             mnuEventForm.Name = "mnuEventForm";
-            mnuEventForm.Size = new Size(180, 22);
+            mnuEventForm.Size = new Size(212, 22);
             mnuEventForm.Text = "Zpráva o &události";
             mnuEventForm.Click += mnuEventForm_Click;
             // 
             // statusStrip1
             // 
-            statusStrip1.Location = new Point(0, 428);
+            statusStrip1.Location = new Point(0, 518);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(800, 22);
+            statusStrip1.Padding = new Padding(1, 0, 16, 0);
+            statusStrip1.Size = new Size(914, 22);
             statusStrip1.TabIndex = 2;
             statusStrip1.Text = "statusStrip1";
             // 
             // SecurityIncidents
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 540);
             Controls.Add(statusStrip1);
-            Controls.Add(menuStrip1);
+            Controls.Add(mnuMain);
+            Font = new Font("Consolas", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
             IsMdiContainer = true;
-            MainMenuStrip = menuStrip1;
+            MainMenuStrip = mnuMain;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "SecurityIncidents";
             Text = "SecurityIncidents";
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
+            mnuMain.ResumeLayout(false);
+            mnuMain.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private MenuStrip menuStrip1;
+        private MenuStrip mnuMain;
         private ToolStripMenuItem mnuFile;
         private ToolStripMenuItem mnuForm;
         private ToolStripMenuItem mnuEventForm;
