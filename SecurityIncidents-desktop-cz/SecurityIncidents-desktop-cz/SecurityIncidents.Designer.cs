@@ -37,10 +37,11 @@
             mnuFileSaveAs = new ToolStripMenuItem();
             mnuFileExport = new ToolStripMenuItem();
             mnuFileExportMarkdown = new ToolStripMenuItem();
+            konecToolStripMenuItem = new ToolStripMenuItem();
             mnuOptions = new ToolStripMenuItem();
             mnuHelp = new ToolStripMenuItem();
             mnuHelpAbout = new ToolStripMenuItem();
-            konecToolStripMenuItem = new ToolStripMenuItem();
+            mnuFileNewWorkLog = new ToolStripMenuItem();
             mnuMain.SuspendLayout();
             SuspendLayout();
             // 
@@ -63,15 +64,15 @@
             // 
             // mnuFileNew
             // 
-            mnuFileNew.DropDownItems.AddRange(new ToolStripItem[] { mnuFileNewEvent });
+            mnuFileNew.DropDownItems.AddRange(new ToolStripItem[] { mnuFileNewEvent, mnuFileNewWorkLog });
             mnuFileNew.Name = "mnuFileNew";
-            mnuFileNew.Size = new Size(196, 22);
+            mnuFileNew.Size = new Size(220, 22);
             mnuFileNew.Text = "&Nový";
             // 
             // mnuFileNewEvent
             // 
             mnuFileNewEvent.Name = "mnuFileNewEvent";
-            mnuFileNewEvent.Size = new Size(132, 22);
+            mnuFileNewEvent.Size = new Size(196, 22);
             mnuFileNewEvent.Text = "Událost";
             mnuFileNewEvent.Click += mnuFileNewEvent_Click;
             // 
@@ -108,9 +109,17 @@
             // mnuFileExportMarkdown
             // 
             mnuFileExportMarkdown.Name = "mnuFileExportMarkdown";
-            mnuFileExportMarkdown.Size = new Size(180, 22);
+            mnuFileExportMarkdown.Size = new Size(140, 22);
             mnuFileExportMarkdown.Text = "&MarkDown";
             mnuFileExportMarkdown.Click += mnuFileExportMarkdown_Click;
+            // 
+            // konecToolStripMenuItem
+            // 
+            konecToolStripMenuItem.Name = "konecToolStripMenuItem";
+            konecToolStripMenuItem.ShortcutKeys = Keys.Alt | Keys.X;
+            konecToolStripMenuItem.Size = new Size(220, 22);
+            konecToolStripMenuItem.Text = "&Konec";
+            konecToolStripMenuItem.Click += konecToolStripMenuItem_Click;
             // 
             // mnuOptions
             // 
@@ -128,15 +137,16 @@
             // mnuHelpAbout
             // 
             mnuHelpAbout.Name = "mnuHelpAbout";
-            mnuHelpAbout.Size = new Size(180, 22);
+            mnuHelpAbout.Size = new Size(156, 22);
             mnuHelpAbout.Text = "&O aplikaci";
+            mnuHelpAbout.Click += mnuHelpAbout_Click;
             // 
-            // konecToolStripMenuItem
+            // mnuFileNewWorkLog
             // 
-            konecToolStripMenuItem.Name = "konecToolStripMenuItem";
-            konecToolStripMenuItem.ShortcutKeys = Keys.Alt | Keys.X;
-            konecToolStripMenuItem.Size = new Size(220, 22);
-            konecToolStripMenuItem.Text = "&Konec";
+            mnuFileNewWorkLog.Name = "mnuFileNewWorkLog";
+            mnuFileNewWorkLog.Size = new Size(196, 22);
+            mnuFileNewWorkLog.Text = "&Pracovní záznam";
+            mnuFileNewWorkLog.Click += mnuFileNewWorkLog_Click;
             // 
             // SecurityIncidents
             // 
@@ -171,5 +181,6 @@
         private ToolStripMenuItem mnuOptions;
         private ToolStripMenuItem mnuHelp;
         private ToolStripMenuItem mnuHelpAbout;
+        private ToolStripMenuItem mnuFileNewWorkLog;
     }
 }

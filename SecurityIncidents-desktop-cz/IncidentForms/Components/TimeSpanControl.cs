@@ -47,7 +47,7 @@ namespace IncidentForms.Components
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public TimeSpan Duration
         {
-            //get => TimeSpan.FromMinutes((double)numDays.Value * 1440 + (double)numHours.Value * 60 + (double)numMinutes.Value);
+            
             get => new TimeSpan((int)numDays.Value, (int)numHours.Value, (int)numMinutes.Value, 0);
             set
             {
@@ -60,13 +60,10 @@ namespace IncidentForms.Components
         public TimeSpanControl()
         {
             InitializeComponent();
-            //SetDuration();
+            
         }
 
-        //private void SetDuration()
-        //{
-        //    Duration=TimeSpan.FromMinutes((double)numDays.Value*1440+(double)numHours.Value*60+(double)numMinutes.Value);
-        //}
+        
 
     }
 }

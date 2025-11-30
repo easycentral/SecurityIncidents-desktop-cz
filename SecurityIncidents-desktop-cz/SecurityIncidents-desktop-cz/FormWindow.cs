@@ -29,6 +29,7 @@ namespace SecurityIncidents_desktop_cz
             pnlForm.Controls.Clear();
             pnlForm.AutoScroll = true;
             form.Dock = DockStyle.Top;
+            
             pnlForm.Controls.Add(form);
 
         }
